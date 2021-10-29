@@ -4,7 +4,7 @@
 int main (){
   int i, number, factorial = 1;
  
-  printf("Enter a number to calculate its factorial:");
+  printf("Enter a number between 1-10 to calculate its factorial:");
   scanf("%d", &number);
 
   if (number > 0 && number < 11){
