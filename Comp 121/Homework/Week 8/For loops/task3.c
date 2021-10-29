@@ -17,8 +17,8 @@ int main()
             if( is_prime == 1 )
             {
                 printf("%d, ", i);
-            }
-        }
+            } 
+        } // this is a test
     }
   return 0;
 }
