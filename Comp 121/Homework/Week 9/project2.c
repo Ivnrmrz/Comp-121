@@ -9,13 +9,13 @@ int main() {
 
   // Read the value from total.txt and display it as the amount of coins the user has.
   FILE * coinsf = fopen("total.txt", "r");
-  fscanf(coinsf, "%d", & coins);
-  printf("You have %d coins.\n", coins);
+  fscanf(coinsf, "%d", &coins);
+  printf("You currently have %d coins.\n", coins);
 
   // Read the value from current_save.txt into a variable called current_save not current_game_score.
   FILE * savef = fopen("current_save.txt", "a+");
-  fscanf(savef, "%d", & current_save);
-  printf("Your current save is %d.\n", current_save);
+  fscanf(savef, "%d", &current_save);
+  printf("You have an ongoing game with %d coins.\n", current_save);
 
   // If the current_save is 0:
   if (current_save == 0) {
@@ -33,13 +33,13 @@ int main() {
 
       //Present the user with two options, their input should be validated with a do while loop.
       int input;
-      printf("Option 1 / Option 2:");
-      scanf("%d", & input);
+      printf("Please enter one of the two following options:\nEnter a 0 to end your saved game.\nEnter a 1 to continue your game.\nPlease enter a command:");
+      scanf("%d", &input);
 
       // Option 0: End Their Saved Game
       if (input == 0) {
         // Show them their current total.
-        printf("Your total is %d", coins);
+        printf("Your total is %d\n", coins);
 
         //Add the current_save to their total
         int current_save = current_save + coins;
@@ -55,7 +55,15 @@ int main() {
 
         // Write 0 to the current_save file.
         fprintf(savef, "0");
-      } else if (input == 1) {}
+      } else if (input == 1) {
+
+          // Set the current_game_score to the current_save score.
+          int current_game_score = current_save;
+
+          // Save a 0 to the current_save file.
+          fprintf(savef, "0");
+          printf("You entered 1");
+      }
 
     } while (current_save != 0);
 
