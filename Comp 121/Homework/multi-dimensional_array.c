@@ -18,3 +18,24 @@ int main(){
 			printf("%d",grid[row][col]);
 		putchar('\n');
 }
+
+// Ex. 2
+#include <stdio.h>
+
+int main(){
+	
+	//4 is the total number of names and 5 is the total letters + 1 for null 
+	char names = [4][5] = { 
+	"Ant", 
+	"Bee", 
+	"Cat", 
+	"Duck"};
+	
+	int x; 
+	
+	names[2][2]='r'; //Cat turns into car.
+	for(x=0,x<4,x++)
+		printf("%s\n", names[x]);
+	
+	return(0)
+}
