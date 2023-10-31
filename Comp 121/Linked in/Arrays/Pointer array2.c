@@ -8,7 +8,7 @@ int main(){
 	char *ptr;
 	for(x=0,x<5,x++){
 		ptr = presidents[x];
-		while(*ptr != '\0'){
+		while(*ptr){
 			putchar(*ptr);
 			ptr++;
 		}
